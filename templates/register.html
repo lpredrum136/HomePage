@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block body %}
+    <form action="/"><!--Form stacked (full width). Deleted form validation because without Java it sucks-->
+        <div class="form-group"><!--Multiple inputs on the same line/Input groups-->
+            <label for="fullname"><strong>Full name:</strong></label>
+            <div class="input-group">
+                <div class="input-group-prepend"><!--Input group (Prepend)-->
+                    <span class="input-group-text">Person</span>
+                </div>
+                <input type="text" class="form-control" placeholder="First Name" required>
+                <input type="text" class="form-control" placeholder="Last Name" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field</div>
+            </div>
+        </div>
+
+        <div class="form-group"><!--Input--><!--Input Group (Append)-->
+            <label for="email"><strong>Email address:</strong></label><!--Input Group Label - 
+                label has the same name with input id so that when you click the label text, the input field is automatically highlighted-->
+            <div class="input-group"><!--Input Group(Append)-->
+                <input type="email" class="form-control" id="email" placeholder="Enter email address" required>
+                <div class="input-group-append">
+                    <span class="input-group-text">@example.com</span>
+                </div>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field</div>
+            </div>
+        </div>
+
+        <div class="form-group"><!--Input-->
+            <label for="pwd"><strong>Password:</strong></label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" required>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Please fill out this field</div>
+        </div>
+        
+        <div class="form-group"><!--Radio-->
+            <label for="nationality"><strong>Nationality:</strong></label><br>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="nationality">Australian
+                </label>
+            </div>
+            <div class="form-check-inline">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="nationality">Other
+                </label>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="gender"><strong>Gender:</strong></label>
+            <div class="custom-control custom-radio"><!--Custom Radio-->
+                <input type="radio" class="custom-control-input" id="male" name="gender" value="male">
+                <label class="custom-control-label" for="male">Male</label>
+            </div>
+            <div class="custom-control custom-radio"><!--Custom Radio-->
+                <input type="radio" class="custom-control-input" id="female" name="gender" value="female">
+                <label class="custom-control-label" for="female">Female</label>
+            </div>
+            <div class="custom-control custom-radio"><!--Custom Radio-->
+                <input type="radio" class="custom-control-input" id="other" name="gender" value="other">
+                <label class="custom-control-label" for="other">Prefer not to say</label>
+            </div>
+        </div>
+        
+
+        <div class="form-group"><!--Select List-->
+            <label for="selectUni"><strong>Select your university:</strong></label>
+            <select class="form-control custom-select mb-2" id="selectUni" name="selUni"><!--Custom Select-->
+                <option value="" selected disabled>Select your university</option>
+                <option value="qut">Queensland University of Technology</option>
+                <option value="uq">University of Queensland</option>
+                <option value="grif">Griffith University</option>
+                <option value="other">Other</option>
+            </select>
+            <br>
+            <label for="selectInterest"><strong>Select your interests (You may choose more than one):</strong></label>
+            <select multiple class="form-control" id="selectInterest" name="selInt">
+                <option value="" selected disabled>Select your interests</option>
+                <option value="frontend">Frond End</option>
+                <option value="backend">Back End</object>
+                <option value="security">Security</option>
+                <option value="crypto">Cryptography</option>
+                <option value="data">Data Science</option>
+                <option value="webdev">Web Development</option>
+            </select>
+        </div>
+
+        <div class="form-group"><!--Input group buttons-->
+            <label for="qualifications"><strong>Qualifications:</strong></label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="qualifications" placeholder="List your qualifications">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Add</button>
+                    <button class="btn btn-danger" type="button">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group"><!--Custom upload-->
+            <label for="custom-file-upload"><strong>Upload your resume:</strong></label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file to upload</label>
+            </div>
+        </div><!--Note that you also have to include some jQuery code if you want the name of the file to appear when you select a specific file:-->
+
+        <div class="form-group"><!--Upload-->
+            <label for="avatar"><strong>Upload your profile picture:</strong></label>
+            <input type="file" class="form-control-file border" id="avatar" name="avatar">
+        </div>
+
+        <div class="form-group form-check"><!--Checkbox-->
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" required><strong>I agree with the Terms and Conditions</strong>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Check this checkbox to continue</div>
+            </label>
+        </div>
+
+        <!--Modal-->
+        <button type="button" class="btn btn-info btn-sm mb-2" data-toggle="modal" data-target="#terms">Terms and Conditions</button>
+        <!--Modal for Terms and Conditions-->
+        <div class="modal fade" id="terms"><!--Modal with Fade-->
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><!--Modal at center of page-->
+                                                        <!--Scroll inside modal, not the whole page as in default, when the body text is too long-->
+                <div class="modal-content">
+                    <!--Modal header-->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Terms and Conditions</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <!--Modal body-->
+                    <div class="modal-body">
+                        Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+                        Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        
+                        Some text to enable scrolling.. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                    <!--Modal footer-->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="custom-control custom-checkbox mb-3"><!--Custom Checkbox-->
+            <input class="custom-control-input" type="checkbox" id="customCheck" required>
+            <label class="custom-control-label" for="customCheck"><strong>I authorise the site to use my information</strong></label>
+            <div class="valid-feedback">Valid.</div>
+            <div class="invalid-feedback">Check this checkbox to continue</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div class="sticky"><!--Sticky element, more at https://www.w3schools.com/howto/howto_css_sticky_element.asp-->
+        <div class="wrapper">
+            <div class="dropup"><!--Dropdown button-->
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    Viewport Choice
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <h5 class="dropdown-header">For Desktop Devices</h5>
+                    <a class="dropdown-item" href="/register">Desktop View</a>
+                    <div class="dropdown-divider"></div>
+                    <h5 class="dropdown-header">For Mobile Devices</h5>
+                    <a class="dropdown-item" href="/register">Mobile View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

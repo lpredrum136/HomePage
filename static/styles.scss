@@ -1,0 +1,89 @@
+$maxWidth: 100%;
+$maxHeight: 100%;
+
+body {
+    padding-bottom: 100px;
+}
+
+.col-sm-3
+{
+    background-color: rgb(173, 184, 180);
+}
+
+img
+{
+    max-width: $maxWidth;
+    max-height: $maxHeight;
+}
+
+.jumbotron
+{
+    background-color: rgba(8, 105, 143, 0.712);
+}
+
+.progress {
+    > .progress-bar.progress-bar-striped.progress-bar-animated.bg-warning {
+        width: $maxWidth;
+    }
+}
+
+#test
+{
+    color: red;
+}
+
+.card.bg-info.text-white
+{
+    width: 400px;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.dropup {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+}
+
+[data-target="#cookies"] {
+    position: absolute;
+    top: 263px;
+    right: 80px;
+}
+
+%border {
+    display: inline-block;
+    height: 70px;
+    margin: 6px;
+}
+
+span.border {
+    @extend %border;
+    width: 70px;
+}
+
+.border.border-top-0 {
+    @extend %border;
+    width: 500px;
+}
+
+.rounded-lg {
+    @extend %border;
+    width: 70px;    
+    background-color: blueviolet;
+}
+
+@media (max-width: 500px) {
+    .jumbotron {
+        background-color: rgb(7, 102, 102);
+    }
+}

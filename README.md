@@ -1,2 +1,3 @@
-# HomePage
-Small project to explore HTML, CSS, SCSS and Bootstrap. A web page for myself.
+# Project 0
+
+Web Programming with Python and JavaScript

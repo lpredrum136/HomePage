@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Employment
+{% endblock %}
+
+{% block body %}
+    <ul class="breadcrumb"><!--Breadcrumb-->
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Employment</li>
+    </ul>
+
+    <div id="accordion"><!--Accordion with collapsibles-->
+        
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#abc">
+                    07-14
+                </a>
+            </div>
+            <div id="abc" class="collapse" data-parent="#accordion"><!--Use the data-parent attribute to make sure 
+                that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.-->
+                <div class="card-body">
+                    <table class="table table-hover table-bordered">
+                        <tbody class="table-active">
+                        
+                            <tr>
+                                <td>yay</td>
+                                <td>yaytoo</td>
+                            </tr>
+                            <tr>
+                                <td>yay</td>
+                                <td>yaytoo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Required meta tags-->        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Bootstrap CSS-->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!--Personal CSS-->
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <!--Javascript sources-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <!--Personal script-->
+        <script>
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip(); // Enable tooltips
+                $('[data-toggle="popover"]').popover(); // Enable popovers
+                $('#message').click(function(){// When the button with id="message" is clicked
+                    $('.toast').toast('show'); // Show all toasts
+                });
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron col-9 text-white"><!--jumbotron-->
+                    <div class="container" id="top-of-page">
+                        <h1>Henry Nguyen's Page<br><small>Junior Developer</small></h1><!--Typography-->
+                    </div>
+                </div>
+                <div class="col-3">
+                    <a href="https://www.facebook.com/nguyenhaiphuonghp">
+                        <img src="/static/Henry Nguyen.jpg" class="rounded float-right" alt="Henry Nguyen's picture"><!--images-->
+                    </a>
+                    <!--Button-->
+                    <a href="https://www.facebook.com/nguyenhaiphuonghp" class="btn btn-info btn-block" role="button" target="_blank">
+                        <span class="spinner-grow spinner-grow-sm"></span><!--Spinners-->
+                        Connect with Henry on Facebook
+                    </a>
+                </div>
+            </div>
+
+            <!--Modal: Button to open the modal-->
+            <button type="button" class="btn btn-warning float-right" data-toggle="modal" data-target="#cookies">
+                Cookies Use Notice
+            </button>
+
+            <!--The modal, with Fade-->
+            <div class="modal fade" id="cookies">
+                <div class="modal-dialog modal-dialog-centered"><!--Modal at the center of page-->
+                    <div class="modal-content">
+                        <!--Modal header-->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Cookies Use</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <!--Modal body-->
+                        <div class="modal-body">
+                            By visiting this site, you agree to our use of cookies to deliver better browsing experience.
+                        </div>
+                        <!--Modal footer-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <form class="form-inline" action="/"><!--Form inlined/Form elements on the same line-->
+                <label for="quickEmail" class="mr-sm-2">Email:</label>
+                <input type="email" class="form-control mb-2 mr-sm-2" id="quickEmail">
+                <label for="quickPwd" class="mr-sm-2">Password:</label>
+                <input type="password" class="form-control mb-2 mr-sm-2" id="quickPwd">
+                <div class="form-check mb-2 mr-sm-2">
+                    <label class="form-check-lable">
+                        <input class="form-check-input" type="checkbox">Remember Me
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 mr-2">Login</button>
+                <a href="/register" class="btn btn-primary mb-2">Register</a>
+            </form>
+
+            <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top mb-2"><!-- A grey horizontal navbar that becomes vertical on small screens -->
+                <!-- Brand/logo -->
+                <a class="navbar-brand" href="https://www.facebook.com/nguyenhaiphuonghp">
+                    <img src="/static/Henry Nguyen.jpg" alt="Henry Nguyen's picture" style="width: 40px;">
+                </a>
+                <!--Toggler/Collapsible button-->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!--Navbar Links-->
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/personalinfo">Personal Information</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/employment">Employment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact Me</a>
+                        </li>
+                        <li class="nav-item dropdown"><!--Navbar item with dropdown-->
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDrop" data-toggle="dropdown">
+                                More
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-header">About CS50</div>
+                                <a class="dropdown-item" href="https://courses.edx.org/courses/course-v1:HarvardX+CS50+X/course/">
+                                    Introduction to Computer Science
+                                </a>
+                                <a class="dropdown-item" href="https://courses.edx.org/courses/course-v1:HarvardX+CS50W+Web/course/">
+                                    Web Programming with Python and Javascript
+                                </a>
+                                <div class="dropdown-divider"></div><!--Dropdown divider-->
+                                <div class="dropdown-header">Bootstrap 4 Basics</div>
+                                <a class="dropdown-item" href="/BS4utilities">
+                                    BS4 Utilities
+                                </a>
+                                <a class="dropdown-item" href="/BS4flex">
+                                    BS4 Flex
+                                </a>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!--Navbar form-->
+                <form class="form-inline" action="/search" method="POST">
+                    <input class="form-control mr-sm-2" type="text" name="query" placeholder="Google Search">
+                    <button class="btn btn-success" type="submit">Search</button>
+                </form>
+            </nav>
+
+            <div class="alert alert-info alert-dismissible fade show"><!--Alert-->
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                This is <a href="https://docs.cs50.net/web/2018/x/projects/0/project0.html" class="alert-link">Project 0</a>
+                of <a href="https://www.edx.org/course/cs50s-web-programming-with-python-and-javascript" class="alert-link">
+                CS50W - Web Programming with Python and Javascript</a>!<span class="badge badge-pill badge-success">New</span><!--Badge-->
+                <br>
+                Completed
+                <div class="progress"><!--Progress Bar-->
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning">100%</div>
+                </div>
+            </div>
+
+            <div class="alert alert-warning alert-dismissible fade show"><!--Alert-->
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                You have new <a href="https://www.messenger.com" class="btn btn-primary" role="button">Messages
+                <span class="badge badge-light">4</span></a><!--Badge in a button-->
+            </div>
+            
+            {% block body %}{% endblock %}
+        </div>
+        
+        
+    </body>
+</html>

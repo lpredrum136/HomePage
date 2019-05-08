@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Employment
+{% endblock %}
+
+{% block body %}
+    <ul class="breadcrumb"><!--Breadcrumb-->
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Employment</li>
+    </ul>
+
+    <div id="accordion"><!--Accordion with collapsibles-->
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#employment1">
+                    Private Tutor
+                </a>
+            </div>
+            <div id="employment1" class="collapse" data-parent="#accordion"><!--Use the data-parent attribute to make sure 
+                that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.-->
+                <div class="card-body">
+                    <table class="table table-hover table-bordered">
+                        <tbody class="table-active">
+                            <tr>
+                                <th>Year</th>
+                                <td>2007</td>
+                            </tr>
+                            <tr>
+                                <th>Position</th>
+                                <td>Private Tutor of English and Physics</td>
+                            </tr>
+                            <tr>
+                                <th>Organisation</th>
+                                <td>Self-employed</td>
+                            </tr>
+                            <tr>
+                                <th>Responsibilities</th>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            Assist and motivate students to keep pace with newlyreleased educational information.
+                                        </li>
+                                        <li>
+                                            Teach students basic and advanced academic knowledge which is used to pass exams, 
+                                            especially the university entrance exam.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#employment2">
+                    IELTS Teacher
+                </a>
+            </div>
+            <div id="employment2" class="collapse" data-parent="#accordion"><!--Use the data-parent attribute to make sure 
+                that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.-->
+                <div class="card-body">
+                    <table class="table table-hover table-bordered">
+                        <tbody class="table-active">
+                            <tr>
+                                <th>Year</th>
+                                <td>2013</td>
+                            </tr>
+                            <tr>
+                                <th>Position</th>
+                                <td>IELTS Teacher</td>
+                            </tr>
+                            <tr>
+                                <th>Organisation</th>
+                                <td>RES - Reliable English School</td>
+                            </tr>
+                            <tr>
+                                <th>Responsibilities</th>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            In charge of extra IELTS classes, which focus on reading and listening skills.
+                                        </li>
+                                        <li>
+                                            Recognize the weaknesses of individuals to devise an appropriate learning 
+                                            pathway for each of them.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#employment3">
+                    Peer Advisor
+                </a>
+            </div>
+            <div id="employment3" class="collapse" data-parent="#accordion"><!--Use the data-parent attribute to make sure 
+                that all collapsible elements under the specified parent will be closed when one of the collapsible item is shown.-->
+                <div class="card-body">
+                    <table class="table table-hover table-bordered">
+                        <tbody class="table-active">
+                            <tr>
+                                <th>Year</th>
+                                <td>2018</td>
+                            </tr>
+                            <tr>
+                                <th>Position</th>
+                                <td>Peer Advisor</td>
+                            </tr>
+                            <tr>
+                                <th>Organisation</th>
+                                <td>QUT Science and Engineering Faculty<br>Student Success Group</td>
+                            </tr>
+                            <tr>
+                                <th>Responsibilities</th>
+                                <td>
+                                    Building social capital and employability in Post-graduate 
+                                    Science and Engineering students<br>
+                                    <ul>
+                                        <li>
+                                            Improve levels of engagement between post-graduate 
+                                            international and domestic students to build intercultural 
+                                            skills, a sense of community and employability skills
+                                        </li>
+                                        <li>
+                                            Conduct research and an environmental scan to better 
+                                            understand the relation among students, the university and 
+                                            employers and identify possible gaps.
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky"><!--Sticky element, more at https://www.w3schools.com/howto/howto_css_sticky_element.asp-->
+        <div class="wrapper">
+            <div class="dropup"><!--Dropdown button-->
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    Viewport Choice
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <h5 class="dropdown-header">For Desktop Devices</h5>
+                    <a class="dropdown-item" href="/employment">Desktop View</a>
+                    <div class="dropdown-divider"></div>
+                    <h5 class="dropdown-header">For Mobile Devices</h5>
+                    <a class="dropdown-item" href="/employment">Mobile View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BS4 Utilities
+{% endblock %}
+
+{% block body %}
+    <ul class="breadcrumb"><!--Breadcrumb-->
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">BS4 Utilities</li>
+    </ul>
+    
+    <div id="border">
+        <h2>Border</h2>
+        Use the <code>border</code> class to add or remove borders from an element
+        <code>border-[top/bottom/left/right]-0</code> to delete border<br>
+        <span class="border">Border</span><br>
+        <span class="border border-0">No Border</span><br>
+        <span class="border border-top-0">No Top Border, change by replacing with border-left/right/bottom-0</span>
+    </div>
+
+    <div id="borderColor">
+        <h2>Border Colour</h2>
+        <code>border border-primary/secondary/success/danger/warning/info/light/dark/white to set border color</code><br>
+        <span class="border border-primary">Border Primary</span>
+    </div>
+
+    <div id="borderRadius">
+        <h2>Border Radius</h2>
+        Add rounded corners to an element with the <code>rounded</code> classes<br>
+        <code>rounded-[sm/lg/top/bottom/right/left/circle/0]</code> to modify the radius<br>
+        <span class="rounded-lg"></span>
+    </div>
+
+    <div id="floatNClearfix">
+        <h2>Float and Clearfix</h2>
+        <p>Float an element to the right with the <code>/float-right</code> class or to the left with <code>.float-left</code>>, and clear floats 
+        with the <code>.clearfix</code> class:</p>
+        <div class="clearfix">
+            <span class="float-left">
+                <button type="button" class="btn btn-primary">Button that floats left</button>
+            </span>
+            <span class="float-right">
+                <button type="button" class="btn btn-primary">Button that floats right</button>
+            </span>
+        </div>
+    </div>
+
+    <div id="responsiveFloat">
+        <h2>Responsive Floats</h2>
+        <p>Float an element to the left or to the right depending on screen width, with the responsive float classes (<code>.float-*-left|right - where *</code> 
+            is <code>sm</code> (>=576px), <code>md</code> (>=768px), <code>lg</code> (>=992px) or <code>xl</code> (>=1200px)):
+        <div class="float-sm-right">Float right if >= small screen</div><br>
+        <div class="float-md-right">Float right if >= medium screen</div><br>
+        <div class="float-lg-right">Float right if >= large screen</div><br>
+        <div class="float-xl-right">Float right if >= xtralarge screen</div><br>
+    </div>
+
+    <div id="centerAlign">
+        <h2>Center Align</h2>
+        <p>Center an element with the <code>.mx-auto class</code> (adds margin-left and margin-right: auto):</p>
+        <div class="mx-auto bg-warning" style="width: 200px;">Centered</div>
+    </div>
+
+    <div id="width">
+        <h2>Width</h2>
+        <p>Set the width of an element with the w-* classes (<code>.w-25, .w-50, .w-75, .w-100, .mw-100</code>)</p>
+        <div class="w-25 bg-warning">Width 25%</div>
+        <div class="w-75 bg-warning">Width 75%</div>
+        <div class="mw-100 bg-warning">Max Width 100%</div>
+    </div>
+
+    <div id="height">
+        <h2>Height</h2>
+        <p>Set the height of an element with the h-* classes (<code>.h-25, .h-50, .h-75, .h-100, .mh-100</code>):</p>
+        <div style="height: 200px; background-color:aquamarine;">
+            <div class="h-25 d-inline-block bg-warning">Height 25%</div>
+            <div class="h-75 d-inline-block bg-warning">Height 75%</div>
+            
+        </div>
+    </div>
+
+    <div id="spacing">
+        <h2>Spacing</h2>
+        <p>Full reference <a href="https://www.w3schools.com/bootstrap4/bootstrap_utilities.asp" target="_blank">here</a></p>
+        <div class="pt-4 bg-warning">Top padding 24px</div>
+        <div class="p-5 bg-success">Padding on all sides 48 px</div>
+        <div class="m-5 pb-5 bg-info">Margin 48px on all sides and bottom padding 48px</div>
+    </div>
+
+    <div id="shadow">
+        <h2>Shadow</h2>
+        <p>Use the <code>shadow-</code> classes to add shadows to an element:</p>
+        <div class="shadow-sm p-4 mb-4 bg-white">Small shadow</div>
+        <div class="shadow p-4 mb-4 bg-white">Default shadow</div>
+        <div class="shadow-lg p-4 mb-4 bg-white">Large shadow</div>
+    </div>
+
+    <div id="verticalAlign">
+        <h2>Vertical Align</h2>
+        <p>Use the <code>align-</code> classes to change the alignment of elements (only works on inline, inline-block, inline-table and table cell elements):</p>
+        <span class="align-baseline mr-2">align-baseline</span>
+        <span class="align-top mr-2">align-top</span>
+        <span class="align-middle mr-2">align-middle</span>
+        <span class="align-bottom mr-2">align-bottom</span>
+        <span class="align-text-top mr-2">align-text-top</span>
+        <span class="align-text-bottom mr-2">alight-text-bottom</span>
+    </div>
+    
+    <div id="responsiveEmbeds">
+        <h2>Responsive Embeds</h2>
+        <p>Create responsive video or slideshow embeds based on the width of the parent.</p>
+        <p>Add the <code>.embed-responsive-item</code> to any embed elements (like "<"iframe">" or "<"video">") in a parent element with <code>.embed-responsive</code> 
+            and an aspect ratio of your choice:</p>
+
+        <!--1:1 ratio-->
+        <h3>1:1 ratio</h3>
+        <div class="embed-responsive embed-responsive-1by1">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+
+        <!--16:9 ratio-->
+        <h3>16:9 ratio</h3>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+        </div>
+    </div>
+
+    <div id="colors">
+        <h2>Colors</h2>
+        <p>
+            As described in the <a href="https://www.w3schools.com/bootstrap4/bootstrap_colors.asp" target="_blank">Colors</a> chapter, here is a list of all text and background color classes:<br>
+            The classes for text colors are: <code>.text-muted, .text-primary, .text-success, .text-info, .text-warning, .text-danger, .text-secondary, .text-white, .text-dark, .text-body (default body color/often black) and .text-light</code>:
+        </p>
+        <span class="text-success">This text indicates success</span>
+        <p>Contextual text classes can also be used on links, which will add a darker hover color:</p>
+        <a href="#" class="text-danger">Danger link</a>
+    </div>
+
+    <div id="bgColors">
+        <h2>Background Colours</h2>
+        <p>
+            The classes for background colors are: <code>.bg-primary, .bg-success, .bg-info, .bg-warning, .bg-danger, .bg-secondary, .bg-dark and .bg-light</code>.<br>
+            Note that background colors do not set the text color, so in some cases you'll want to use them together with a <code>.text-*</code> class.
+        </p>
+        <span class="bg-danger text-white">This text represents danger</span>
+    </div>
+
+    <div id="textAndTypo">
+        <h2>Text/Typography</h2>
+        See <a href="https://www.w3schools.com/bootstrap4/bootstrap_typography.asp">Text and Typography</a>
+    </div>
+
+    <div class="sticky"><!--Sticky element, more at https://www.w3schools.com/howto/howto_css_sticky_element.asp-->
+        <div class="wrapper">
+            <div class="dropup"><!--Dropdown button-->
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    Viewport Choice
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <h5 class="dropdown-header">For Desktop Devices</h5>
+                    <a class="dropdown-item" href="/BS4utilities">Desktop View</a>
+                    <div class="dropdown-divider"></div>
+                    <h5 class="dropdown-header">For Mobile Devices</h5>
+                    <a class="dropdown-item" href="/BS4utilities">Mobile View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

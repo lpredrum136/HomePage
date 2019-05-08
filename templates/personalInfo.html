@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Personal Information
+{% endblock %}
+
+{% block body %}
+    <ul class="breadcrumb"><!--Breadcrumb-->
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Personal Information</li>
+    </ul>
+
+    <!--Nav tabs-->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#country">
+                Biography
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#hobbies">
+                Hobbies
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#programmingExp">
+                Programming Experience
+            </a>
+        </li>
+    </ul>
+    
+    <!--Tab panes-->
+    <div class="tab-content">
+        <div class="tab-pane container active" id="country"> <!--Button and Collapse-->
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#profile">
+                Click to reveal Personal Profile
+            </button>
+            <div id="profile" class="collapse">
+                He was born in <span class="bg-danger text-white"><a href="#" data-toggle="tooltip" title="A beautiful country">Vietnam</a></span><br>.<!--Colors-->
+                Particularly he was born in <a href="#" data-toggle="tooltip" data-placement="top" title="28 yo now">1991</a> in 
+                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Ward">Lieu Giai</a>, 
+                <a href="#" data-toggle="tooltip" data-placement="left" title="District">Ba Dinh</a>, 
+                <a href="#" data-toggle="tooltip" data-placement="right" title="Capital">Hanoi</a>.<!--Positioning tooltips-->
+            </div>
+        </div>
+        <div class="tab-pane container fade" id="hobbies"><!--Popovers & Closing popovers by clicking outside the element-->
+            <a href="#" data-toggle="popover" title="Guitar (Musical Instrument)" data-trigger="focus" data-content="A musical instrument originated from Spain">Guitar</a>
+            <!--Positioning popovers & Trigger popovers by hovering-->
+            <br>Movie:<br>
+            <a href="#" data-toggle="popover" title="Game of Thrones" data-trigger="hover" data-content="A TV series where anyone can die" data-placement="top">Game of Thrones</a>
+            <a href="#" data-toggle="popover" title="Breaking Bad" data-trigger="hover" data-content="Cooking meth is illegal" data-placement="bottom">Breaking Bad</a>
+            <a href="#" data-toggle="popover" title="Dexter" data-trigger="hover" data-content="A serial killer who brings justice" data-placement="left">Dexter</a>
+            <a href="#" data-toggle="popover" title="Stranger Things" data-trigger="hover" data-content="A group of talented kids" data-placement="right">Stranger Things    </a>
+        </div>
+        <div class="tab-pane container fade" id="programmingExp"><!--Text format-->
+            Henry is good at <code>C, C#, Python</code> and <code>JavaScript</code>. Press <kbd>Alt + F4</kbd> to close this window
+        </div>
+    </div>
+    
+    <div class="sticky"><!--Sticky element, more at https://www.w3schools.com/howto/howto_css_sticky_element.asp-->
+        <div class="wrapper">
+            <div class="dropup"><!--Dropdown button-->
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    Viewport Choice
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <h5 class="dropdown-header">For Desktop Devices</h5>
+                    <a class="dropdown-item" href="/personalinfo">Desktop View</a>
+                    <div class="dropdown-divider"></div>
+                    <h5 class="dropdown-header">For Mobile Devices</h5>
+                    <a class="dropdown-item" href="/personalinfo">Mobile View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

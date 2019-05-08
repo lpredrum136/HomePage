@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Required meta tags-->        
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Henry Nguyen's Homepage</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Bootstrap CSS-->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        
+
+        <!--Javascript sources-->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+
+            .container-fluid, .wrapper, .card-group {
+                height: 100%;
+            }
+
+            a, a:hover, a:focus {
+                text-decoration: none;
+            }
+
+            /* From here we write css to put the drowdown on top of the cardgroup, more at
+            https://stackoverflow.com/questions/2941189/how-to-overlay-one-div-over-another-div */
+
+            .wrapper {
+                position: relative;
+            }
+
+            .wrapperForCookies {
+                position: relative;
+            }
+
+            .dropup {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+
+            img {
+                position: absolute;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                top: 50px;
+                width: 200px;
+            }
+
+            div.stickyViewport {
+                position: -webkit-sticky;
+                position: sticky;
+                bottom: 0;
+                z-index: 1;
+            }
+           
+        </style>
+    </head>
+    
+    <body>
+        <div class="container-fluid">
+            <div class="wrapper"><!--In order to put the drop down on top of the card group, more at
+            https://stackoverflow.com/questions/2941189/how-to-overlay-one-div-over-another-div-->
+
+                <div class="card-group"><!--Cards and cards group-->
+                    <div class="card bg-primary">
+                        <div class="card-body text-center align-items-center d-flex justify-content-center text-white">
+                            <a href="/personalinfo" class="stretched-link"><h1 class="text-white">Personal Information</h1></a>
+                        </div>
+                    </div>
+                    <div class="card bg-warning">
+                        <div class="card-body text-center align-items-center d-flex justify-content-center">
+                            <a href="/education" class="stretched-link"><h1 class="text-white">Education</h1></a>
+                        </div>
+                    </div>
+                    <div class="card bg-success">
+                        <div class="card-body text-center align-items-center d-flex justify-content-center text-white">
+                            <a href="/employment" class="stretched-link"><h1 class="text-white">Employment</h1></a>
+                        </div>
+                    </div>
+                    <div class="card bg-danger">
+                        <div class="card-body text-center align-items-center d-flex justify-content-center">
+                            <a href="/contact" class="stretched-link"><h1 class="text-white">Contact Me</h1></a>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="/static/Henry Nguyen.jpg" class="rounded-circle">
+                                
+            </div>
+            
+        </div>
+        
+    </body>
+</html>
+
+
+    

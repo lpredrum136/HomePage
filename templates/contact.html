@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Contact me
+{% endblock %}
+
+{% block body %}
+    <ul class="breadcrumb"><!--Breadcrumb-->
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active">Contact Me</li>
+    </ul>
+
+    <div class="row">
+        <div class="col">
+            <div class="card bg-info text-white"><!--Cards-->
+                <img class="card-img-top" src="/static/Henry Nguyen.jpg" alt="Henry Nguyen's picture">
+                <div class="card-body">
+                    <h4 class="card-title">Henry Nguyen</h4>
+                    <p class="card-text">Student at QUT</p>
+                    <div class="list-group list-group-horizontal"><!--List groups-->
+                        <a href="https://www.facebook.com/nguyenhaiphuonghp" class="list-group-item list-group-item-action list-group-item-info" target="_blank">
+                            Facebook
+                        </a>
+                        <a href="https://twitter.com/lpredrum136" class="list-group-item list-group-item-action list-group-item-info" target="_blank">
+                            Twitter
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCw4Sy8vz5Gv8Eoixohnb1IQ?view_as=subscriber" 
+                        class="list-group-item list-group-item-action list-group-item-info" target="_blank">
+                            YouTube
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <form action="#messageText">
+                <div class="form-group" id="messageText"><!--TextArea-->
+                    <label for="msg">Send a message:</label>
+                    <textarea class="form-control" rows="5" id="msg"></textarea>
+                </div>
+                <div class="form-check"><!--Checkbox-->
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="private">Private matter
+                    </label>
+                </div>
+                <div class="form-check mb-2"><!--Checkbox-->
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="professional">Professional matter
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary" id="message">Send</button>
+                
+                <!--Toast: Popup when user click send message-->
+                <div class="toast" data-delay="2000"><!--Show toast for 2 seconds-->
+                    <div class="toast-header">
+                        Message successfully sent
+                    </div>
+                    <div class="toast-body">
+                        Expect reply within a few days
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="carousel" class="carousel slide mt-2" data-ride="carousel"><!--Carousel-->
+        <label for="carousel"><strong>Here are some free wallpapers for you</strong></label>
+        <!--Indicators-->
+        <ul class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+            <li data-target="#carousel" data-slide-to="2"></li>
+        </ul>
+
+        <!--The slideshow-->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/static/pexels-photo-1040626.jpeg" alt="Heart Gate">
+                <div class="carousel-caption"><!--Carousel captions-->
+                    <h3>Heart Gate</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/pexels-photo-1439615.jpeg" alt="Stream">
+                <div class="carousel-caption">
+                    <h3>Stream</h3>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/static/waterfall-thac-dray-nur-buon-me-thuot-daklak-68147.jpeg" alt="Waterfall">
+                <div class="carousel-caption">
+                    <h3>Waterfall</h3>
+                </div>
+            </div>
+        </div>
+
+        <!--Left and right control-->
+        <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+
+    <div class="sticky"><!--Sticky element, more at https://www.w3schools.com/howto/howto_css_sticky_element.asp-->
+        <div class="wrapper">
+            <div class="dropup"><!--Dropdown button-->
+                <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">
+                    Viewport Choice
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <h5 class="dropdown-header">For Desktop Devices</h5>
+                    <a class="dropdown-item" href="/contact">Desktop View</a>
+                    <div class="dropdown-divider"></div>
+                    <h5 class="dropdown-header">For Mobile Devices</h5>
+                    <a class="dropdown-item" href="/contact">Mobile View</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+        
+{% endblock %}
